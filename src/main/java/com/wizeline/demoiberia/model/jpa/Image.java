@@ -10,6 +10,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Lob
     @Column(name = "url")
     private String url;
 
