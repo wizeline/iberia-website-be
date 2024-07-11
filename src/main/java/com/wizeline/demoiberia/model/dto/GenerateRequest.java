@@ -16,16 +16,24 @@ public class GenerateRequest implements Serializable {
     private static final long serialVersionUID = 2176998117618122173L;
 
     private String prompt;
+    // Use open or free
+    private String engine;
 
     @JsonCreator
-    public GenerateRequest(final String prompt) {
+    public GenerateRequest(final String prompt,  String engine) {
         this.prompt = prompt;
+        this.engine = engine;
 
     }
 
     @JsonProperty("prompt")
     public String getPrompt() {
         return this.prompt;
+    }
+
+    @JsonProperty("engine")
+    public String getEngine() {
+        return this.engine;
     }
 
 }
