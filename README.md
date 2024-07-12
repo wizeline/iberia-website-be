@@ -1,15 +1,18 @@
 # iberia-website-be
+
 Iberia Website PoC
 
 # Endpoints:
 
-## Generate image url (currently on develop):
-Accepts the desired prompt and the engine to be used:
+## Generate image url (working):
+
+Accepts the desired prompt and the engine to be used.
+Returns url of the image:
 
 **Engines supported:**
+
 - **open** (OpenAI)
 - **free** (FreePik)
-
 
     curl --location 'http://localhost:8080/generate' \
     --header 'Accept: application/json' \
@@ -19,8 +22,8 @@ Accepts the desired prompt and the engine to be used:
     "engine": "open"
     }'
 
-
 ## Save image (working):
+
 Saves image selected and accepted by the user
 Returns same url if saving was done successfully:
 
@@ -34,6 +37,7 @@ Returns same url if saving was done successfully:
     }'
 
 ## Retrieve images (working):
+
 Retrieves all images loaded by the backend and saved by the user
 
     curl --location 'http://localhost:8080/retrieve' \
