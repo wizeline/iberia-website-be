@@ -19,7 +19,15 @@ public class ImageService {
 
     public String saveImage(final SaveRequest saveRequest) {
 
-        final Image saved = this.imageRepository.save(new Image(saveRequest.getUrl(), saveRequest.getTag(), saveRequest.getDestination()));
+        final List<Image> byTagAndDestination = this.imageRepository.findByTagAndDestination(saveRequest.getTag(), saveRequest.getDestination());
+
+        final Image image = byTagAndDestination.stream()
+                .findFirst()
+                .orElseGet(() -> new Image(saveRequest.getUrl(), saveRequest.getTag(), saveRequest.getDestination()));
+
+        image.setUrl(saveRequest.getUrl());
+
+        final Image saved = this.imageRepository.save(image);
 
         return saved.getUrl();
 
