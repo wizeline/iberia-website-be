@@ -14,17 +14,20 @@ Returns url of the image:
 - **open** (OpenAI)
 - **free** (FreePik)
 
-    curl --location 'http://localhost:8080/generate' \
-    --header 'Accept: application/json' \
-    --header 'Content-Type: application/json' \
-    --data '{
-    "prompt": "soltero playa",
-    "engine": "open"
-    }'
+  curl --location 'http://localhost:8080/generate' \
+  --header 'Accept: application/json' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "prompt": "soltero playa",
+  "engine": "open"
+  }'
 
 ## Save image (working):
 
 Saves image selected and accepted by the user
+
+If the combination of destination and tag already exists, replaces with the new url
+
 Returns same url if saving was done successfully:
 
     curl --location 'http://localhost:8080/save' \
