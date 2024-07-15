@@ -1,22 +1,22 @@
 INSERT INTO images (url, tag, destination) VALUES
-('https://lh3.googleusercontent.com/d/1CgfdLoCMVUzortF4wDz2jjmVlbj3oCYu', 'family', 'Paris'),
-('https://lh3.googleusercontent.com/d/1xMrkkGGyAFCLSo_m6MXnk8BE0w50c7mX', 'family', 'Rome');
-('https://lh3.googleusercontent.com/d/1i70_yKVpCYHlhAKfiWhCuetMQJgofRSb', 'family', 'Amsterdam');
-('https://lh3.googleusercontent.com/d/1T_Paimn9exKYkda3y6oAVHQLze7v7N7n', 'family', 'Barcelona');
-('https://lh3.googleusercontent.com/d/1QnSN1UQr8iyGS19K2eCiBWVpyhHQueyL', 'family', 'London');
-('https://lh3.googleusercontent.com/d/1S3Q-UGmWpmsZUTqLLvtaoPsEXDmfCIXW', 'youth', 'Paris'),
-('https://lh3.googleusercontent.com/d/1s8SMeqvQ2WHHJ8Kq1UDXSxN8D7HB1O3L', 'youth', 'Rome');
-('https://lh3.googleusercontent.com/d/1yLq62vjuBUcGgj6BHBBrxGD0kpPCKHi9', 'youth', 'Amsterdam');
-('https://lh3.googleusercontent.com/d/1HY1jnEhfJSgVMO6Dz_bm4GEb2XMN3QQV', 'youth', 'Barcelona');
-('https://lh3.googleusercontent.com/d/1TiQC8hI02YH2BwG5CHw2UFXP1QA_YB-Z', 'youth', 'London');
-('https://lh3.googleusercontent.com/d/147he4uLrXyCbNl0INb3tHt2bzGLK9Yj3', 'business', 'Paris'),
-('https://lh3.googleusercontent.com/d/1IbW0iAsCODQMxLjwKewSVKj_YquB1w_S', 'business', 'Rome');
-('https://lh3.googleusercontent.com/d/1paE_Kbf-CPIY7vP-wKAU9eV0-lTH7GFT', 'business', 'Amsterdam');
-('https://lh3.googleusercontent.com/d/19kwaylANi5kELTIi8b2lVv7pgefcKdap', 'business', 'Barcelona');
-('https://lh3.googleusercontent.com/d/1dekhsY36uvz7DZghd3xsdG4-IX7q4nhZ', 'business', 'London');
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/paris-family-openai-1.jpg', 'family', 'Paris'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/rome-family-openai-1.jpg', 'family', 'Rome'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/amsterdam-family-openai-1.jpg', 'family', 'Amsterdam'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/barcelona-family-openai-1.jpg', 'family', 'Barcelona'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/london-family-openai-1.jpg', 'family', 'London'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/paris-youth.jpg', 'youth', 'Paris'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/rome-youth.jpg', 'youth', 'Rome'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/amsterdam-youth-openai-1.jpg', 'youth', 'Amsterdam'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/barcelona-youth.jpg', 'youth', 'Barcelona'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/london-youth.jpg', 'youth', 'London'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/paris-business-openai-3.jpg', 'business', 'Paris'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/rome-business-openai-3.jpg', 'business', 'Rome'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/amsterdam-business.jpg', 'business', 'Amsterdam'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/barcelona-business.jpg', 'business', 'Barcelona'),
+('https://pub-f92dc6d6f6cc435994c0993e60b23530.r2.dev/london-business.jpg', 'business', 'London');
 
 
 INSERT INTO videos (url, tag, destination) VALUES
-('https://drive.google.com/uc?export=preview&id=19X2zw7qUej9xdewvU9EBQzX_2bZJ8kfG', 'family', 'France');
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/roma-familia.mp4', 'family', 'Rome');
 
 
