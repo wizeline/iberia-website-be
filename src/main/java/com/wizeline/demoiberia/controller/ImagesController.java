@@ -7,13 +7,11 @@ import com.wizeline.demoiberia.service.FreePikService;
 import com.wizeline.demoiberia.service.ImageService;
 import com.wizeline.demoiberia.service.OpenAIService;
 import jakarta.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
@@ -48,7 +46,7 @@ public class ImagesController {
             return ResponseEntity.ok(this.openAIService.getImageUrl(generateRequest.getPrompt()));
         }
         if (FREE.equals(generateRequest.getEngine())) {
-            return ResponseEntity.ok(this.freePikService.getImageUrl(generateRequest.getPrompt(),httpServletRequest));
+            return ResponseEntity.ok(this.freePikService.getImageUrl(generateRequest.getPrompt(), this.httpServletRequest));
         }
 
 
@@ -68,7 +66,7 @@ public class ImagesController {
 
     @GetMapping(value = "/retrieve",
             produces = {"application/json"})
-    ResponseEntity<List<ImageResponse>> saveImage() {
+    ResponseEntity<List<ImageResponse>> retrieveImage() {
 
         final List<ImageResponse> imageResponses = this.imageService.retrieveImages();
         return ResponseEntity.ok(imageResponses);
@@ -77,14 +75,14 @@ public class ImagesController {
 
     @GetMapping(value = "/resources/freepik/{fileName}",
             produces = {"application/json"})
-    public ResponseEntity<Resource> getFile(@PathVariable String fileName) throws Exception {
+    public ResponseEntity<Resource> getFile(@PathVariable final String fileName) throws Exception {
         // Path to the PDF file rq 
-        Path path = Paths.get( "/tmp/"+fileName);
+        final Path path = Paths.get("/tmp/" + fileName);
         // Load the resource
-        Resource resource = new UrlResource(path.toUri());
+        final Resource resource = new UrlResource(path.toUri());
         // Return ResponseEntity with PDF content type
-            return ResponseEntity.ok()
-                    .contentType(MediaType.IMAGE_JPEG)
-                    .body(resource);
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(resource);
     }
 }
