@@ -36,6 +36,7 @@ public class ImagesController {
         this.freePikService = freePikService;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/generate",
             produces = {"application/json"},
             consumes = {"application/json"})
@@ -64,6 +65,7 @@ public class ImagesController {
         return ResponseEntity.ok(url);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/retrieve",
             produces = {"application/json"})
     ResponseEntity<List<ImageResponse>> retrieveImage() {
@@ -73,6 +75,7 @@ public class ImagesController {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/resources/freepik/{fileName}",
             produces = {"application/json"})
     public ResponseEntity<Resource> getFile(@PathVariable final String fileName) throws Exception {
