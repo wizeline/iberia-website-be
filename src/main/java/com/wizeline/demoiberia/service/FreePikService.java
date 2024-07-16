@@ -4,10 +4,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wizeline.demoiberia.exception.ImageGenerationException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.multipart.MultipartFile;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 import java.io.File;
@@ -19,6 +21,12 @@ public class FreePikService {
 
     @Value("${freepik.key}")
     private String apiKey;
+
+    private final ImageUploadService imageUploadService;
+
+    public FreePikService(ImageUploadService imageUploadService) {
+        this.imageUploadService = imageUploadService;
+    }
 
     public String getImageUrl(final String prompt, final HttpServletRequest httpServletRequest) {
         final RestClient customClient = RestClient.builder()
@@ -37,25 +45,8 @@ public class FreePikService {
         final String base64String = jsonObject.getAsJsonArray("data").get(0).getAsJsonObject().get("base64").getAsString();
         final byte[] base64Byte = Base64Coder.decode(base64String);
         final String fileName = "freepik" + System.nanoTime() + ".jpg";
-        FileOutputStream fos = null;
-        final String pathOutputFile = File.separator + "tmp" + File.separator + fileName;
-        try {
-            fos = new FileOutputStream(pathOutputFile);
-            fos.write(base64Byte);
 
-        } catch (final Exception e) {
-            throw new ImageGenerationException("Error generating images", e);
-        } finally {
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (final IOException e) {
-                    System.out.println("Unable to close " + pathOutputFile);
-                }
-            }
-        }
-
-        return httpServletRequest.getScheme() + "://" + httpServletRequest.getServerName() + ":" + httpServletRequest.getServerPort() + "/resources/freepik/" + fileName;
+        return imageUploadService.uploadImage(base64Byte, fileName);
     }
 
 

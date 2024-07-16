@@ -74,18 +74,4 @@ public class ImagesController {
         return ResponseEntity.ok(imageResponses);
     }
 
-
-    @CrossOrigin(origins = "*",allowedHeaders = "Origin, X-Requested-With, Content-Type, Accept")
-    @GetMapping(value = "/resources/freepik/{fileName}",
-            produces = {"application/json"})
-    public ResponseEntity<Resource> getFile(@PathVariable final String fileName) throws Exception {
-        // Path to the PDF file rq 
-        final Path path = Paths.get("/tmp/" + fileName);
-        // Load the resource
-        final Resource resource = new UrlResource(path.toUri());
-        // Return ResponseEntity with PDF content type
-        return ResponseEntity.ok()
-                .contentType(MediaType.IMAGE_JPEG)
-                .body(resource);
-    }
 }
