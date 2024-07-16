@@ -17,6 +17,21 @@ INSERT INTO images (url, tag, destination) VALUES
 
 
 INSERT INTO videos (url, tag, destination) VALUES
-('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/roma-familia.mp4', 'family', 'Rome');
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/roma-familia.mp4', 'family', 'Rome'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/rome-youth-runway.mp4', 'youth', 'Rome'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/rome-business-runway.mp4', 'business', 'Rome'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/paris-youth-runway.mp4', 'youth', 'Paris'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/paris-family-runway-1.mp4', 'family', 'Paris'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/paris-business-runway.mp4', 'business', 'Paris'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/london-youth-runway.mp4', 'youth', 'London'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/london-family-runway.mp4', 'family', 'London'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/london-business-runway.mp4', 'business', 'London'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/barcelona-youth-runway.mp4', 'youth', 'Barcelona'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/barcelona-family-runway.mp4', 'family', 'Barcelona'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/barcelona-business-runway.mp4', 'business', 'Barcelona'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/amsterdam-youth-runway.mp4', 'youth', 'Amsterdam'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/amsterdam-family-runway.mp4', 'family', 'Amsterdam'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/amsterdam-business-runway.mp4', 'business', 'Amsterdam');
+
 
 
