@@ -75,7 +75,7 @@ public class ImagesController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping(value = "/resources/freepik/{fileName}",
             produces = {"application/json"})
     public ResponseEntity<Resource> getFile(@PathVariable final String fileName) throws Exception {

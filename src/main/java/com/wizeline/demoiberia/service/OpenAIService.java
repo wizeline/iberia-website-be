@@ -37,7 +37,7 @@ public class OpenAIService {
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer sk-proj-TZIaRyNDae5Ky4eP5i10T3BlbkFJ5trz6jrzbXtx3QxhRPx5");
+        headers.set("Authorization", "Bearer sk-proj-pf7waJ9EDvwq4DeeOcdoT3BlbkFJQAsB8ndjxKdkEAQ3KBuh");
 
         final Request request = new Request(prompt, this.imageModel, NUMBER_IMAGES, QUALITY, STYLE, SIZE);
 
