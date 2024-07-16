@@ -2,6 +2,16 @@
 
 Iberia Website PoC
 
+How to start:  
+Create configuration.env and add the api keys. For example:
+
+OPEN_KEY=sk-proj-etc  
+FREE_KEY=other_key
+
+Go to [DemoiberiaApplication.java](src%2Fmain%2Fjava%2Fcom%2Fwizeline%2Fdemoiberia%2FDemoiberiaApplication.java)  
+Click on the green arrow and run.  
+Add to the IDEA run configuration the configuration.env route you created in the environment variables field
+
 # Endpoints:
 
 ## Generate image url (working):
@@ -14,13 +24,13 @@ Returns url of the image:
 - **open** (OpenAI)
 - **free** (FreePik)
 
-  curl --location 'http://localhost:8080/generate' \
-  --header 'Accept: application/json' \
-  --header 'Content-Type: application/json' \
-  --data '{
-  "prompt": "soltero playa",
-  "engine": "open"
-  }'
+curl --location 'http://localhost:8080/generate' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--data '{
+"prompt": "soltero playa",
+"engine": "open"
+}'
 
 ## Save image (working):
 

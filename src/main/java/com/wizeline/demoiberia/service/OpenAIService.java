@@ -26,6 +26,9 @@ public class OpenAIService {
     @Value("${openai.model}")
     private String imageModel;
 
+    @Value("${openai.key}")
+    private String apiKey;
+
     private final RestTemplate restTemplate;
 
     public OpenAIService(final RestTemplate restTemplate) {
@@ -37,7 +40,7 @@ public class OpenAIService {
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer sk-proj-pf7waJ9EDvwq4DeeOcdoT3BlbkFJQAsB8ndjxKdkEAQ3KBuh");
+        headers.set("Authorization", "Bearer " + this.apiKey);
 
         final Request request = new Request(prompt, this.imageModel, NUMBER_IMAGES, QUALITY, STYLE, SIZE);
 
