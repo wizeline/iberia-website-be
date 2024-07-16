@@ -17,7 +17,7 @@ INSERT INTO images (url, tag, destination) VALUES
 
 
 INSERT INTO videos (url, tag, destination) VALUES
-('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/roma-familia.mp4', 'family', 'Rome'),
+('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/rome-youth-runway.mp4', 'family', 'Rome'),
 ('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/rome-youth-runway.mp4', 'youth', 'Rome'),
 ('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/rome-business-runway.mp4', 'business', 'Rome'),
 ('https://pub-62879b18ab6c4d1c9c7d87e031cf65be.r2.dev/paris-youth-runway.mp4', 'youth', 'Paris'),
