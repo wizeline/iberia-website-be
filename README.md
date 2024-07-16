@@ -101,3 +101,14 @@ Response example:
         "destination": "Amsterdam"
         }
     ]
+
+## Generate description (working):
+
+Accepts the desired prompt and generates a destiny description
+
+    curl --location 'http://localhost:8080/description' \
+    --header 'Accept: application/json' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "prompt": "Could you recommend me activities to do in Madrid as a young person, having 3 days to visit the city on Winter? Write it for an airline travel destiny description"
+    }'

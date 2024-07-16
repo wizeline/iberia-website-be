@@ -1,4 +1,4 @@
-package com.wizeline.demoiberia.model.open;
+package com.wizeline.demoiberia.model.open.image;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,8 +8,8 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-@JsonTypeName("Request")
-public class Response implements Serializable {
+@JsonTypeName("ImageResponse")
+public class ImageResponse implements Serializable {
     @Serial
     private static final long serialVersionUID = -5677499015496414230L;
 
@@ -17,7 +17,7 @@ public class Response implements Serializable {
     private final List<Data> data;
 
     @JsonCreator
-    public Response(final long created, final List<Data> data) {
+    public ImageResponse(final long created, final List<Data> data) {
         this.created = created;
         this.data = data;
     }

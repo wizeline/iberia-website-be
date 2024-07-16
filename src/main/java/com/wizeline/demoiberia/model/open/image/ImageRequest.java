@@ -1,4 +1,4 @@
-package com.wizeline.demoiberia.model.open;
+package com.wizeline.demoiberia.model.open.image;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.Serial;
 import java.io.Serializable;
 
-@JsonTypeName("Request")
-public class Request implements Serializable {
+@JsonTypeName("ImageRequest")
+public class ImageRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = -1482118277764194028L;
 
@@ -20,7 +20,7 @@ public class Request implements Serializable {
     private final String size;
 
     @JsonCreator
-    public Request(final String prompt, final String model, final int n, final String quality, final String style, final String size) {
+    public ImageRequest(final String prompt, final String model, final int n, final String quality, final String style, final String size) {
         this.prompt = prompt;
         this.model = model;
         this.n = n;

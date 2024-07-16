@@ -1,4 +1,4 @@
-package com.wizeline.demoiberia.model.open;
+package com.wizeline.demoiberia.model.open.image;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
