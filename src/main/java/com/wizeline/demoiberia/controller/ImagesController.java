@@ -8,14 +8,9 @@ import com.wizeline.demoiberia.service.ImageService;
 import com.wizeline.demoiberia.service.OpenAIService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -26,6 +21,7 @@ public class ImagesController {
 
     private static final String OPEN = "open";
     private static final String FREE = "free";
+    private static final String FREE_STOCK = "free_stock";
     private final ImageService imageService;
     private final OpenAIService openAIService;
     private final FreePikService freePikService;
@@ -47,9 +43,11 @@ public class ImagesController {
             return ResponseEntity.ok(this.openAIService.getImageUrl(generateRequest.getPrompt()));
         }
         if (FREE.equals(generateRequest.getEngine())) {
-            return ResponseEntity.ok(this.freePikService.getImageUrl(generateRequest.getPrompt(), this.httpServletRequest));
+            return ResponseEntity.ok(this.freePikService.generateImageUrl(generateRequest.getPrompt(), this.httpServletRequest));
         }
-
+        if (FREE_STOCK.equals(generateRequest.getEngine())) {
+            return ResponseEntity.ok(this.freePikService.searchImageUrl(generateRequest.getPrompt(), this.httpServletRequest));
+        }
 
         return ResponseEntity.badRequest()
                 .body("unexpected engine. Supported values are open and free");

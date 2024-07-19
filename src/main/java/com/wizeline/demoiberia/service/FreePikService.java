@@ -4,17 +4,18 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.wizeline.demoiberia.exception.ImageGenerationException;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.tomcat.util.buf.UriUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.web.util.UriUtils;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 @Service
 public class FreePikService {
@@ -27,8 +28,32 @@ public class FreePikService {
     public FreePikService(ImageUploadService imageUploadService) {
         this.imageUploadService = imageUploadService;
     }
+    public String searchImageUrl(final String prompt, final HttpServletRequest httpServletRequest) {
+        final RestClient customClient = RestClient.builder()
+                .defaultHeader("x-freepik-api-key", this.apiKey)
+                .build();
 
-    public String getImageUrl(final String prompt, final HttpServletRequest httpServletRequest) {
+        final String result = customClient.get().uri(
+                UriComponentsBuilder.fromUriString(  "https://api.freepik.com/v1/resources")
+                        .queryParam("term", prompt).toUriString()
+                )
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve().body(String.class);
+
+        final JsonObject jsonObject = JsonParser.parseString(result)
+                .getAsJsonObject();
+        
+        return jsonObject.getAsJsonArray("data")
+                .get(0).getAsJsonObject()
+                .get("image")
+                .getAsJsonObject()
+                .get("source")
+                .getAsJsonObject()
+                .get("url")
+                .getAsString();
+    }
+    
+    public String generateImageUrl(final String prompt, final HttpServletRequest httpServletRequest) {
         final RestClient customClient = RestClient.builder()
                 .defaultHeader("x-freepik-api-key", this.apiKey)
                 .build();
